@@ -1,4 +1,4 @@
-import os 
+import os
 from box.exceptions import BoxValueError
 import yaml
 from cnnClassifier import logger
@@ -9,6 +9,8 @@ from box import ConfigBox
 from pathlib import Path
 from typing import Any
 import base64
+
+
 
 @ensure_annotations
 def read_yaml(path_to_yaml: Path) -> ConfigBox:
@@ -34,6 +36,7 @@ def read_yaml(path_to_yaml: Path) -> ConfigBox:
     except Exception as e:
         raise e
     
+
 
 @ensure_annotations
 def create_directories(path_to_directories: list, verbose=True):
@@ -61,7 +64,6 @@ def save_json(path: Path, data: dict):
         json.dump(data, f, indent=4)
 
     logger.info(f"json file saved at: {path}")
-
 
 
 
